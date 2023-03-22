@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg shadow-sm py-3 px-3 bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <span class="logo">FINAX BANK</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact-us">Contact Us</a>
+              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Banking
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="new-account-form">Apply New</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Payments</a></li> -->
+                        <li><a class="dropdown-item" href="transactions">Transactions</a></li>
+                        <li><a class="dropdown-item" href="money-transfer">Money Transfer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a *ngIf="isLoggedIn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    {{greet}} {{name | titlecase}}
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="user-profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="bank-account-details">Account Details</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="authentication" (click)="onLogout()"><i class="fa fa-sharp fa-solid fa-right-from-bracket text-danger"></i> Logout</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

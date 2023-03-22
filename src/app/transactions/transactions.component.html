@@ -1,0 +1,75 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Transactions</li>
+        </ol>
+      </nav>
+</div>
+<div class="container table-responsive pb-5" align="center">
+  <h2 class="transactions-heading display-5 text-uppercase fw-bold pt-3 pb-4">Transactions</h2>
+    <div class="container card p-4">
+      <form action="">
+        <div class="row">
+      <div class="col-md-4 mb-2">  
+        <label for="transactionStartingDate" class="form-label">Choose starting date</label>
+      </div>
+      <div class="col-md-8 mb-4">
+       <input type="date" class="form-control w-50" id="transactionStartingDate" [(ngModel)]="startDate" name="startDate">
+        </div>
+        <div class="col-md-4 mb-2">  
+          <label for="transactionEndingDate" class="form-label">Choose ending date</label>
+        </div>
+        <div class="col-md-8 mb-4">
+          <input type="date" class="form-control w-50" id="transactionEndingDate"  [(ngModel)]="endDate" name="endDate">
+          </div>  
+        </div>
+        <div class="alert alert-primary mb-4">*You can select starting date and ending date to view transaction within that time period*</div>
+        <button type="submit" class="btn submit-transaction-date" (click)="getCustomerDebitTransactions()">Get Transaction</button>
+      </form>
+    </div>
+    <table class="table table-bordered center mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Txn Details</th>
+            <th scope="col">Date</th>
+            <th scope="col">Transaction Comment</th>
+            <th scope="col">Amount (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of customerTransaction;">
+            <td>
+               <span>{{e.transactionId}}</span>
+                <p>Recieved From {{e.senderName}} ({{e.senderAccountNumber}})</p>
+            </td>
+            <td>{{e.transactionDate.toString().split("T")[0]}} {{e.transactionDate.toString().split("T")[1].split(".")[0] }}</td>
+            <td> 
+              {{e.senderComment}}
+
+            </td>
+            <td class="fw-bold text-success"> 
+             + {{e.transactionAmount}}
+
+            </td>
+          </tr>
+          <tr *ngFor="let e of customerTransaction1">
+            <td>
+               <span>{{e.transactionId}}</span>
+                <p>Paid To {{e.recipientName}} ({{e.recipientAccountNumber}})</p>
+            </td>
+            <td>{{e.transactionDate.toString().split("T")[0]}} {{e.transactionDate.toString().split("T")[1].split(".")[0] }}</td>
+            <td> 
+              {{e.senderComment}}
+
+            </td>
+            <td class="fw-bold text-danger"> 
+             - {{e.transactionAmount}}
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<app-footer></app-footer>

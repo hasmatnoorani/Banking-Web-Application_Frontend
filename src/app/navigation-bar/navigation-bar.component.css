@@ -1,0 +1,28 @@
+/*
+#Resources ->
+
+background: linear-gradient(90deg, #31d35c, #2bb7da); 
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    font-size: 28px;
+    background: linear-gradient(90deg, #3800e7, #8a15ff);;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}  
+
+.nav-link{
+    letter-spacing: 1px !important;
+}
+.dropdown-item{
+    letter-spacing: 1px !important;
+}

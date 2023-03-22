@@ -1,0 +1,181 @@
+.banner{
+    background: linear-gradient(to right,#3800e7, #8a15ff);
+    height: 88.8vh;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+  }
+  .banner h1 {
+      font-size: 4.5rem !important;
+      margin-bottom: 0.2em;
+    }
+    
+  .banner  p {
+      font-size: 1.4rem;
+      letter-spacing: 1px !important;
+    }
+  .main {
+      height: 88.8vh;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+    }
+   .about-bank{
+    min-height: 100vh;
+   }
+    
+    .reviews{
+        background: linear-gradient(to right,#3800e7, #8a15ff);
+        overflow: hidden;
+        min-height: 100vh;
+    }
+    
+    .reviews-title{
+        text-align: center;
+        margin-bottom: 7rem;
+    }
+    
+    .reviews-title p{
+        font-size: 4rem;
+    }
+    
+    .reviews-card{
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        width: 780px;
+    }
+    .card{
+        background: linear-gradient( #3800e7, #8a15ff) !important;
+        color: #fff;
+    }
+    
+    @media (max-width: 425px){
+        .reviews-card{
+            grid-template-columns: 1fr;
+            width: fit-content;
+        }
+    }
+    .card-img{
+        width: fit-content;
+        height: fit-content;
+    }
+    
+    .card-text{
+        background-color: white;
+        padding: 2rem 4rem; 
+        height: 359px;
+        overflow: hidden;
+    }
+    
+    @media (max-width: 425px){
+        .card-text{
+            padding: 1rem 2rem;
+            width: 70vw;
+            height: fit-content;
+        }
+    }
+    
+    .card-title p{
+        font-weight: 800;
+        font-size: 2rem;
+        line-height: 105.52%;
+    }
+    
+    .card-para{
+        margin-top: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .card-author{
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    
+    .reviews-row{
+        display: flex;
+        gap: 2rem;
+    }
+    
+    @media (max-width: 425px){
+        .card-title p{
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    
+        .card-para p{
+            font-size: 0.7rem;
+        }
+    
+        .card-author p{
+            font-size: 0.7rem;
+        }
+        .reviews-row{
+            flex-direction: column;
+            margin: 0 auto;
+            width: fit-content;
+        }
+        .reviews img{
+            width: 70vw;
+        }
+    }
+    
+    .row-first{
+        animation: move-first 20s linear infinite;
+        margin-bottom: 2rem;
+    }
+    
+  
+    
+    @media (max-width: 425px){
+      
+    
+        .row-first{
+            animation: none;
+        }
+    }
+    
+    @keyframes move-first{
+        50%{
+            transform: translateX(-1000px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+
+.alter-heading{
+  font-size: 60px;
+  background: -webkit-linear-gradient(left, #3800e7, #8a15ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+.alter-paragraph{
+ font-size: 25px;
+}
+@media screen and (max-width:760px) {
+    .alter-paragraph{
+        font-size: 15px;
+       } 
+       .alter-heading{
+        font-size: 48px;
+      } 
+}
+.lead{
+    font-size: 17px;
+    font-weight: 400;
+}
+.btn{
+    width: 100%;
+}
+.accordion-item, .accordion-item:focus, .accordion-item:active, .accordion-item::selection{
+    border-radius:0px !important;
+}

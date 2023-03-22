@@ -1,0 +1,33 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+      </ol>
+    </nav>
+</div>
+<div class="container pb-5">
+    <h2 class="contact-us-heading display-5 text-uppercase fw-bold pt-4">Contact Us</h2>
+    <hr class="pb-4">
+    <form>
+        <div class="mb-4">
+            <label for="contact-us-name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="contact-us-name" aria-describedby="name">
+          </div>
+        <div class="mb-4">
+          <label for="ontact-us-email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="contact-us-email" aria-describedby="email">
+        </div>
+        <div class="mb-4">
+          <label for="contact-us-subject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="contact-us-subject" aria-describedby="subject">
+        </div>
+        <div class="mb-5">
+            <label for="contact-us-message" class="form-label">Message</label>
+            <textarea class="form-control" id="contact-us-message" rows="5" aria-describedby="message"></textarea>
+          </div>
+        <button type="submit" class="btn submit-contact-us py-3">Submit</button>
+      </form>
+</div>
+<app-footer></app-footer>

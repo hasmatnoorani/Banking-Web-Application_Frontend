@@ -1,0 +1,100 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Account Details</li>
+        </ol>
+      </nav>
+</div>
+<div class="container" align="center" *ngIf="customerAccount.customerAccountStatus==1">
+  <h2 class="account-details-heading display-5 fw-bold pt-4 text-uppercase">Account Details</h2>
+  <hr class="pb-4" />
+    <div class="account-details-inner" >
+      <div class="container alert alert-danger mb-5" *ngIf="customerAccount.customerBalance<1000">
+        <p>Please Maintain A Minimum Account Balance Of ₹1000 To Avoid Any Charges.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Account Type </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerBankAccountType}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Account Holder's Name </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerName}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">IFSC Code </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerBankIfscCode}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Account Number </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerBankAccountNumber}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Date Of Birth </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerDateOfBirth.toString().split("T")[0]}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Gender </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerGender}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Father's Name </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerFatherName}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Mother's Name </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerMotherName}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Permanent Address </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerPermanentAddress}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Phone </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerPhoneNumber}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Email </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerEmail}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Id Proof Type </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerIdProofType}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Id Proof Number </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerIdProofNumber}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Nominee </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerNomineeName}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Nominee Address </p></div>
+        <div class="col-md-8"><p class="lead">{{customerAccount.customerNomineeAddress}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p class="fw-bold">Current Balance (₹) </p></div>
+          <div *ngIf="customerAccount.customerBalance>=1000; else a" class="col-md-8"><p class="lead text-success">{{customerAccount.customerBalance}}</p>
+          </div>
+        </div>
+        <ng-template #a>
+          <div class="col-md-8 mb-5"><p class="lead text-danger">{{customerAccount.customerBalance}}</p>
+          </div>
+        </ng-template>
+      </div>
+</div>
+
+<div class="container py-5" *ngIf="customerAccount.customerAccountStatus==0">
+  <div class="alert alert-warning" role="alert">
+    Your Account Is Pending. Please Wait While We Check Your Details.
+  </div>
+</div>
+<div class="container py-5" *ngIf="customerAccount.customerAccountStatus==-1">
+  <div class="alert alert-danger" role="alert">
+    Your Account Has Been Rejected.Reach Out To Us For Further Queries.
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,45 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Money Transfer</li>
+        </ol>
+      </nav>
+</div>
+<div class="container pb-5">
+    <h2 class="money-transfer-heading display-5 fw-bold">Account Details</h2>
+    <hr class="pb-5"/>
+    <form>
+        <div class="mb-4 row">
+        <div class="col-md-4"> <label for="account-number" class="form-label">Beneficiary Account Number</label></div>
+        <div class="col-md-8"> <input type="text" class="form-control" [(ngModel)]="customerTransaction.recipientAccountNumber" id="account-number" name="account-number"></div>
+        </div>
+        <div class="mb-4 row">
+            <div class="col-md-4"><label for="account-holder-name" class="form-label">Beneficiary Name</label></div>
+            <div class="col-md-8"><input type="text" class="form-control" [(ngModel)]="customerTransaction.recipientName" id="account-holder-name" name="account-holder-name" ></div>
+          </div>
+          <div class="mb-4 row">
+            <div class="col-md-4"><label for="account-holder-name" class="form-label">Beneficiary Nickname <span class="text-warning">(optional)</span></label></div>
+            <div class="col-md-8"><input type="text" class="form-control" [(ngModel)]="customerTransaction.recipientNickname" id="account-holder-name" name="account-holder-name"></div>
+          </div>
+          <div class="mb-4 row">
+            <div class="col-md-4"> <label for="ifsc-code" class="form-label">IFSC Code</label></div>
+            <div class="col-md-8"> <input type="text" class="form-control" [(ngModel)]="customerTransaction.recipientBankIfscCode" id="ifsc-code" name="ifsc-code"></div>
+          </div>
+        <div class="mb-4 row row">
+            <div class="col-md-4"><label for="amount" class="form-label">Amount</label></div>
+            <div class="col-md-8"><input type="text" class="form-control" [(ngModel)]="customerTransaction.transactionAmount" id="amount" name="amount"></div>
+        </div>
+        <!-- <div class="mb-4 row">
+            <div class="col-md-4"> <label for="confirm-account-number" class="form-label">Confirm Account Number</label></div>
+            <div class="col-md-8"> <input type="text" class="form-control" id="confirm-account-number" aria-describedby="confirmAccountNumber"></div>
+          </div> -->
+          <div class="mb-5 row">
+            <div class="col-md-4"> <label for="add-comment" class="form-label">Add Comment</label></div>
+            <div class="col-md-8"> <input type="text" class="form-control" [(ngModel)]="customerTransaction.senderComment" id="add-comment" name="add-comment"></div>
+          </div>
+        <button type="submit" class="btn submit-bank-transfer py-3 mt-3" name="bank-transfer-submit" (click)="initiateTransaction()">Send Money</button>
+      </form>
+</div>
+<app-footer></app-footer>

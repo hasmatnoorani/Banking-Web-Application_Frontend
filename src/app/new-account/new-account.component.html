@@ -1,0 +1,113 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Apply New</li>
+      </ol>
+    </nav>
+</div>
+<div class="container pb-5">
+    <h2 class="submit-new-bank-account-details-heading display-5 fw-bold pt-4 text-uppercase">Account Opening Form</h2>
+    <hr class="pb-4" />
+    <form #bankForm="ngForm" (ngSubmit)="addBankAccount(bankForm)">
+        <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Account Type</label>
+            <select class="form-select" ngModel name="customerBankAccountType" aria-label="Default select example">
+                <option selected>Choose Type</option>
+                <option value="Savings Account">Savings Account</option>
+                <option value="Current Account">Current Account</option>
+              </select>
+          </div>
+        <div class="mb-4">
+            <label for="customerName" class="form-label">Account Holder's Name</label>
+            <input type="text" class="form-control" id="customerName" aria-describedby="name" ngModel name="customerName">
+          </div>
+          <div class="mb-4">
+            <label for="customerBalance" class="form-label">Add Initial Deposit</label>
+            <input type="text" class="form-control" id="customerBalance" aria-describedby="name" ngModel name="customerBalance">
+          </div>
+          <div class="mb-4">
+            <label for="date-of-birth" class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control w-25" id="date-of-birth" aria-describedby="subject" ngModel name="customerDateOfBirth">
+          </div>
+          
+          <!-- <div class="mb-4">
+             <label for="gender" class="form-label">Gender</label> <br>
+            <input class="form-check-input me-2" type="radio" id="customerGender" ngModel name="customerGender">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+            <input class="form-check-input mx-2" type="radio" id="customerGender" ngModel name="customerGender">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Female
+            </label>
+          </div> -->
+
+          <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Gender</label>
+            <select class="form-select" ngModel name="customerGender" aria-label="Default select example">
+                <option selected>Choose Type</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+              </select>
+          </div>
+        <div class="mb-4">
+          <label for="contact-us-subject" class="form-label">Father's Name</label>
+          <input type="text" class="form-control" id="contact-us-subject" aria-describedby="subject" ngModel name="customerFatherName">
+        </div>
+        <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Mother's Name</label>
+            <input type="text" class="form-control" id="contact-us-subject" aria-describedby="subject" ngModel name="customerMotherName">
+          </div>
+          <div class="mb-4">
+            <label for="contact-us-message" class="form-label">Permanent Address</label>
+            <textarea class="form-control" id="permanent-address" rows="5" aria-describedby="message" ngModel name="customerPermanentAddress"></textarea>
+          </div>
+          <!-- <div class="mb-2">
+            <label for="contact-us-message" class="form-label">Current Address</label>
+            <textarea class="form-control" id="current-address" rows="5" aria-describedby="message" ngModel></textarea>
+          </div>
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" value="" id="same-as-above-check" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+                Same As Permanent Address
+            </label>
+          </div> -->
+          <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Phone Number</label>
+          <div class="input-group">
+            <div class="input-group-text" id="btnGroupAddon">+91</div>
+            <input type="number" class="form-control" aria-describedby="phoneNumber" ngModel name="customerPhoneNumber">
+          </div>
+          </div>
+          <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Id Proof Type</label>
+            <select class="form-select" ngModel name="customerIdProofType" aria-label="Default select example">
+                <option selected>Choose Type</option>
+                <option value="Aadhar Card">Aadhar Card</option>
+                <option value="Driving License">Driving License</option>
+                <option value="Pan Card">Pan Card</option>
+              </select>
+          </div>
+          <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Id Proof Number</label>
+            <input type="text" class="form-control" id="contact-us-subject" aria-describedby="subject" ngModel name="customerIdProofNumber">
+          </div>
+        <div class="mb-4">
+            <label for="contact-us-message" class="form-label">Upload Id Proof</label>
+            <input type="file" class="form-control" id="contact-us-subject" aria-describedby="subject" ngModel name="customerIdProofFile">
+          </div>
+          <div class="mb-4">
+            <label for="contact-us-subject" class="form-label">Nominee</label>
+            <input type="text" class="form-control" id="contact-us-subject" aria-describedby="subject" ngModel name="customerNomineeName">
+          </div>
+          <div class="mb-5">
+            <label for="contact-us-message" class="form-label">Nominee Address</label>
+            <textarea class="form-control" id="contact-us-message" rows="5" aria-describedby="message" ngModel name="customerNomineeAddress"></textarea>
+          </div>
+        <button type="submit" class="btn submit-new-bank-account-details py-3">Submit</button>
+      </form>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,16 @@
+<section class="container-fluid bank-manager-login-wrapper">
+    <div class="container bank-manager-login-inner shadow p-5">
+        <h1 class="disply-4 fw-bold text-center text-light alter-heading pb-5"><i class="fa fa-user-tie"></i> FINAX BANK</h1>
+        <form>
+            <div class="mb-3 text">
+              <!-- <label for="bankManagerEmail" class="form-label">Email</label> -->
+              <input type="email" placeholder="Enter Email" class="form-control py-2" id="bankManagerEmail" name="bank-manager-email" [(ngModel)]="manager.bankManagerEmail" />
+            </div>
+            <div class="mb-4"> 
+              <!-- <label for="bankManagerPassword" class="form-label">Password</label> -->
+              <input type="password" placeholder="Enter Password" class="form-control py-2" id="bankManagerPassword" name="bank-manager-password" [(ngModel)]="manager.bankManagerPassword">
+            </div>
+            <button type="submit" (click)="doLogin(manager)" class="btn btn-custom py-2">Login</button>
+          </form>
+    </div>
+</section>

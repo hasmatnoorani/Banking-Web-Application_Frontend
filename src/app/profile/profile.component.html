@@ -1,0 +1,20 @@
+<app-navigation-bar isLoggedIn="{{isLoggedin}}" user="{{user}}" greet="{{greet}}"></app-navigation-bar>
+<div class="container pt-5 pb-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+</div>
+<div class="container pb-5">
+  <h2 class="contact-us-heading display-5 fw-bold text-uppercase pt-4">User Profile</h2>
+  <hr class="pb-4" />
+  
+      <h5 class="mb-3 lead"><strong>Customer Name</strong> : {{customer.customerName}} </h5>
+      <h5 class="mb-3 lead"><strong>Customer Email</strong> : {{customer.customerEmail}} </h5>
+      <h5 class="mb-3 lead"><strong>Profile Created On</strong> : {{customer.dateCustomerJoined.toString().split("T")[0]}}</h5>
+      <!-- <a href="#" class="btn submit-contact-us py-3">Edit Profile Details</a> -->
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,39 @@
+.bank-manager-login-wrapper{
+    height: 100vh;
+    background: linear-gradient(to right,#3800e7, #8a15ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bank-manager-login-inner{
+    width: 40% !important;
+    min-width: 400px;
+    background: #fff;
+    height: 500px;
+}
+.alter-heading{
+    font-size: 50px;
+    background: -webkit-linear-gradient(left, #3800e7, #8a15ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    padding-top: 50px;
+}
+.btn{
+    width: 100%;
+    border-radius: 0px;
+}
+input{
+    border-radius: 0px;
+}
+.btn-custom{
+    background: linear-gradient(70deg, #3800e7, #8a15ff);
+    color: #fff;
+    font-size: 20px;
+}
+@media screen and (max-width:1250px) {
+    .alter-heading{
+        font-size: 40px;
+    }
+}
